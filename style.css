@@ -14,6 +14,7 @@
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
+  --color-begie: #e0cb6e;
 
   --font-large: 48px;
   --font-medium: 28px;
@@ -48,6 +49,12 @@ ul {
   padding-left: 0;
 }
 
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
 h1 {
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
@@ -80,12 +87,13 @@ p {
 #navbar {
   display: flex;
   justify-content: space-between;
-  background: var(--color-grey);
+  background: var(--color-blue);
   align-items: center;
   color: var(--color-white);
   padding: 16px;
 }
 
+/* navbar */
 .navbar__menu {
   display: flex;
 }
@@ -108,4 +116,32 @@ p {
 
 .navbar__menu__item:hover {
   background-color: var(--color-blue);
+}
+
+/* home */
+#home {
+  background: url("image/home-background.jpg") center/cover no-repeat;
+  padding: 40px;
+  text-align: center;
+}
+
+.home__avatar {
+  width: 250px;
+  height: 280px;
+  border-radius: 50%;
+  border: 2px solid var(--color-black);
+}
+
+.home__title .home__description {
+  color: var(--color-dark-grey);
+}
+
+.home__contact {
+  color: var(--color-dark-grey);
+  font-size: var(--font-reguiar);
+  font-weight: var(--weight-semi-bold);
+  margin: 24px;
+  padding: 8px 12px;
+  border: 2px solid var(--color-dark-grey);
+  border-radius: 4px;
 }
