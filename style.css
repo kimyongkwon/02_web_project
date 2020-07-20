@@ -426,6 +426,22 @@ p {
   color: var(--color-orange);
 }
 
+.arrow {
+  position: fixed;
+  top: 90%;
+  left: 95%;
+  font-size: var(--font-large);
+  opacity: 0;
+  /* opacity를 0으로주면 비가시상태이지만 클릭이 되기때문에 pointer-events를 none으로 한다.*/
+  pointer-events: none;
+  transition: all 300ms ease-in;
+}
+
+.arrow.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 @media screen and (max-width: 768px) {
   .navbar__toggle-btn {
     display: block;

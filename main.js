@@ -46,3 +46,17 @@ const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener("scroll", () => {
   home.style.opacity = 1 - window.scrollY / homeHeight;
 });
+
+// arrow
+const arrow = document.querySelector(".arrow");
+document.addEventListener("scroll", () => {
+  if (window.scrollY < 200) {
+    arrow.classList.remove("visible");
+  } else {
+    arrow.classList.add("visible");
+  }
+});
+
+arrow.addEventListener("click", () => {
+  scrollIntoViews("#home");
+});
