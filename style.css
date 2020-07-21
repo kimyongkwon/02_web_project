@@ -170,7 +170,7 @@ p {
 }
 
 .section {
-  padding: 50px;
+  padding: 16px;
   text-align: center;
   margin: auto;
 }
@@ -301,6 +301,7 @@ p {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .work__cartegories {
@@ -329,9 +330,9 @@ p {
   display: inline-block;
 
   /* 효과 */
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
@@ -444,8 +445,10 @@ p {
 
 .arrow {
   position: fixed;
-  top: 90%;
-  left: 95%;
+  bottom: 50px;
+  right: 50px;
+  width: 70px;
+  height: 70px;
   font-size: var(--font-large);
   opacity: 0;
   /* opacity를 0으로주면 비가시상태이지만 클릭이 되기때문에 pointer-events를 none으로 한다.*/
@@ -459,8 +462,19 @@ p {
 }
 
 @media screen and (max-width: 768px) {
+  :root {
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-reguiar: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
   .navbar__toggle-btn {
     display: block;
+    top: 16px;
+    right: 16px;
+    font-size: var(--font-medium);
   }
 
   #navbar {
@@ -472,6 +486,7 @@ p {
   #navbar.navbar--dark {
     padding: 16px;
   }
+
   .navbar__menu {
     flex-direction: column;
     text-align: center;
@@ -483,19 +498,39 @@ p {
     display: block;
   }
 
+  .section {
+    padding: 16px;
+    padding-top: 40px;
+  }
   .about__majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
   }
 
   .major {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
   }
 
   .skillset {
     flex-direction: column;
   }
 
+  .category__btn {
+    margin: 4px 0;
+    width: 100%;
+  }
+
   .project {
     flex-grow: 1;
+  }
+
+  .arrow {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    right: 16px;
+    bottom: 16px;
   }
 }
