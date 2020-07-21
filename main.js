@@ -72,8 +72,13 @@ workContainer.addEventListener("click", (event) => {
     return;
   }
 
-  projectContainer.classList.add("anim-out");
+  const active = document.querySelector(".category__btn.active");
+  active.classList.remove("active");
+  const target =
+    event.target.nodeName === "BUTTON" ? event.target : event.target.parentNode;
+  target.classList.add("active");
 
+  projectContainer.classList.add("anim-out");
   // 0.3초가 지나면 해당 함수를 불러줘
   setTimeout(() => {
     projects.forEach((project) => {
@@ -86,4 +91,26 @@ workContainer.addEventListener("click", (event) => {
     });
     projectContainer.classList.remove("anim-out");
   }, 300);
+});
+
+//
+
+const navbarMenuItems = document.querySelector(".navbar__menu");
+const Items = document.querySelectorAll(".navbar__menu__item");
+navbarMenuItems.addEventListener("click", (event) => {
+  const link = event.target.dataset.link;
+  // console.log(link);
+  if (link == null) {
+    return;
+  }
+
+  Items.forEach((element) => {
+    if (element.dataset.link == link) {
+      element.classList.add("navbar_select");
+    } else {
+      element.classList.remove("navbar_select");
+      element.classList.remove("active");
+    }
+  });
+  // navbarMenuItems.classList.add("navbar_select");
 });
