@@ -22,9 +22,17 @@ navbarMenu.addEventListener("click", (event) => {
     return;
   }
 
+  navbarMenu.classList.remove("open");
+
   // const scrollTo = document.querySelector(link);
   // scrollTo.scrollIntoView({ behavior: "smooth" });
   scrollIntoViews(link);
+});
+
+const navbarToogleButton = document.querySelector(".navbar__toggle-btn");
+navbarToogleButton.addEventListener("click", () => {
+  // console.log("aaa");
+  navbarMenu.classList.toggle("open");
 });
 
 // scrolling contact me button
