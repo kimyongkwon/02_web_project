@@ -60,3 +60,30 @@ document.addEventListener("scroll", () => {
 arrow.addEventListener("click", () => {
   scrollIntoViews("#home");
 });
+
+// project filtering
+const workContainer = document.querySelector(".work__categories");
+const projectContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".project");
+workContainer.addEventListener("click", (event) => {
+  const filter =
+    event.target.dataset.filter || event.target.parentNode.dataset.filter;
+  if (filter == null) {
+    return;
+  }
+
+  projectContainer.classList.add("anim-out");
+
+  // 0.3초가 지나면 해당 함수를 불러줘
+  setTimeout(() => {
+    projects.forEach((project) => {
+      //console.log(proejct.dataset.type);
+      if (filter === "*" || filter === project.dataset.type) {
+        project.classList.remove("invisible");
+      } else {
+        project.classList.add("invisible");
+      }
+    });
+    projectContainer.classList.remove("anim-out");
+  }, 300);
+});
