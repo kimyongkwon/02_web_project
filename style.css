@@ -410,7 +410,26 @@ p {
   transform: translateY(0px);
 }
 
+.project__Links {
+  margin-bottom: 20px;
+}
+
+.project__Links a {
+  margin: 30px;
+}
+
+.project__Links i {
+  font-size: 35px;
+}
+
+.project__Links i:hover {
+  color: var(--color-orange);
+}
 .project__description h3 {
+  color: var(--color-orange);
+}
+
+.project__description span {
   color: var(--color-orange);
 }
 
