@@ -1,4 +1,4 @@
-# 02_web_project
+# portfolio-website-html-css-
 포트폴리오 웹사이트
 
 # 사용기술
